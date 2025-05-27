@@ -2,9 +2,9 @@ from ultralytics import YOLO
 import cv2
 
 def main():
-    model = YOLO('runs/detect/train/weights/best.pt')  # Substitui com o nome do modelo se for diferente
+    model = YOLO('runs/detect/train/weights/best.pt')  
 
-    video_path = 'video.mp4'
+    video_path = 'video2.mp4'
     cap = cv2.VideoCapture(video_path)
 
     if not cap.isOpened():
@@ -21,7 +21,6 @@ def main():
 
         cv2.imshow('Detecção de EPI (vídeo)', annotated_frame)
 
-        # Pressiona 'q' para sair antes do fim do vídeo
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
